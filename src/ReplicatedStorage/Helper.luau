@@ -1,51 +1,77 @@
 local Helper = {}
--- local replicatedStorage = game:GetService("ReplicatedStorage") -- Define replicatedStorage
+local replicatedStorage = game:GetService("ReplicatedStorage") -- Define replicatedStorage
 local serverStorage = game:GetService("ServerStorage") -- Define serverStorage
 local workspace = game:GetService("Workspace") -- Define workspace
+local starterGui = game:GetService("StarterGui") -- Define starterGui
 
-function Helper.FindObjectByPath(root, path)
-    local current = root
-    for name in string.gmatch(path, "[^/]+") do
-        -- print('finding in path', name)
-        current = current:FindFirstChild(name)
-        if not current then
-            return nil -- Return nil if any part of the path is not found
-        end
+function Helper.DetectRoot(path)
+	-- get the first part of the path
+	local root = string.match(path, "([^/]+)")
+	if root == "ReplicatedStorage" then
+		return replicatedStorage
+	elseif root == "ServerStorage" then
+		return serverStorage
+	elseif root == "Workspace" then
+		return workspace
+	elseif root == "StarterGui" then
+		return starterGui
+	end
+
+    return nil
+end
+
+function Helper.FindObjectByPath(path)
+    local root = Helper.DetectRoot(path)
+    if root == nil then
+        return nil
     end
-    return current -- Return the final object if found
+
+	local current = game
+	for name in string.gmatch(path, "[^/]+") do
+		-- print('finding in path', name)
+        if name == root.Name then
+            current = root
+            continue
+        end
+		current = current:FindFirstChild(name)
+		if not current then
+			return nil -- Return nil if any part of the path is not found
+		end
+	end
+	return current -- Return the final object if found
 end
 
 function Helper.AttachScript(part, script)
-    if part and script then
-        local newScript = script:Clone()
-        newScript.Parent = part
-        print(script.Name .. " attached to " .. part.Name .. "!")
-    elseif not part then
-        warn("invalid part!")
-    elseif not script then
-        warn("invalid script!")
-    else
-        warn(part.Name .. " or " .. script.Name .. " not found!")
-    end
+	if part and script then
+		local newScript = script:Clone()
+		newScript.Parent = part
+		print(script.Name .. " attached to " .. part.Name .. "!")
+	elseif not part then
+		warn("invalid part!")
+	elseif not script then
+		warn("invalid script!")
+	else
+		warn(part.Name .. " or " .. script.Name .. " not found!")
+	end
 end
 
 function Helper.AttachScriptFromPath(partPath, scriptPath)
-    -- find the part
-    local path = Helper.FindObjectByPath(workspace, partPath)
-    if path == nil then
-        print(partPath .. " not found")
-        return
-    end
-    
-    -- find the script
-    local script = Helper.FindObjectByPath(serverStorage, scriptPath)
-    if script == nil then
-        print(scriptPath .. " not found")
-        return
-    end
+	-- find the part
+	local part = Helper.FindObjectByPath(partPath)
+	if part == nil then
+		print(partPath .. " not found")
+		return
+	end
 
-    -- attach the script into the part
-    Helper.AttachScript(path, script)
+	-- find the script
+	local script = Helper.FindObjectByPath(scriptPath)
+	if script == nil then
+		print(scriptPath .. " not found")
+		return
+	end
+
+	-- attach the script into the part
+	Helper.AttachScript(part, script)
 end
 
 return Helper
