@@ -1,5 +1,6 @@
 local Helper = {}
-local replicatedStorage = game:GetService("ReplicatedStorage") -- Define replicatedStorage
+-- local replicatedStorage = game:GetService("ReplicatedStorage") -- Define replicatedStorage
+local serverStorage = game:GetService("ServerStorage") -- Define serverStorage
 local workspace = game:GetService("Workspace") -- Define workspace
 
 function Helper.FindObjectByPath(root, path)
@@ -37,7 +38,7 @@ function Helper.AttachScriptFromPath(partPath, scriptPath)
     end
     
     -- find the script
-    local script = Helper.FindObjectByPath(replicatedStorage, scriptPath)
+    local script = Helper.FindObjectByPath(serverStorage, scriptPath)
     if script == nil then
         print(scriptPath .. " not found")
         return

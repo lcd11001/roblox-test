@@ -1,1 +1,0 @@
-print('LavaPart script running')
