@@ -5,7 +5,7 @@ local workspace = game:GetService("Workspace") -- Define workspace
 function Helper.FindObjectByPath(root, path)
     local current = root
     for name in string.gmatch(path, "[^/]+") do
-        print('finding in path', name)
+        -- print('finding in path', name)
         current = current:FindFirstChild(name)
         if not current then
             return nil -- Return nil if any part of the path is not found
