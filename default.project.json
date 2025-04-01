@@ -61,6 +61,11 @@
         }
       }
     },
+
+    "StarterGui": {
+      "$path": "src/StarterGui"
+    },
+
     "Lighting": {
       "$properties": {
         "Ambient": [
