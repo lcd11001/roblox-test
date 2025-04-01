@@ -2,10 +2,10 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Part" referent="RBX9F3F8FFE9C2D43ADB501BA2CC2F46570">
+	<Item class="Part" referent="RBX7452D47F3FA04225BCD47C1832D1A601">
 		<Properties>
 			<bool name="Anchored">false</bool>
-			<BinaryString name="AttributesSerialize"></BinaryString>
+			<BinaryString name="AttributesSerialize">AQAAAAUAAABTcGVlZAYAAAAAAABJQA==</BinaryString>
 			<bool name="AudioCanCollide">true</bool>
 			<float name="BackParamA">-0.5</float>
 			<float name="BackParamB">0.5</float>
