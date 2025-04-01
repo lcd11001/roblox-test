@@ -11,3 +11,9 @@ local LavaPartPath = "MyParts/LavaPart"
 -- local LavaPartScriptPath = "Scripts/LavaScript/LavaPartScript"
 local LavaPartScriptPath = "Scripts/LavaScript/LavaPartScript2"
 Helper.AttachScriptFromPath(LavaPartPath, LavaPartScriptPath)
+
+
+-- Attach the script to the trigger
+local TriggerPartPath = "MyParts/TriggerPart"
+local TriggerPartScriptPath = "Scripts/TriggerScript/TriggerPartScript"
+Helper.AttachScriptFromPath(TriggerPartPath, TriggerPartScriptPath)
