@@ -8,5 +8,6 @@ local Helper = require(replicatedStorage:WaitForChild("Helper"))
 
 -- Attach the script to the lava
 local LavaPartPath = "MyParts/LavaPart"
-local LavaPartScriptPath = "Scripts/LavaScript/LavaPartScript"
+-- local LavaPartScriptPath = "Scripts/LavaScript/LavaPartScript"
+local LavaPartScriptPath = "Scripts/LavaScript/LavaPartScript2"
 Helper.AttachScriptFromPath(LavaPartPath, LavaPartScriptPath)
