@@ -1,4 +1,4 @@
 local treeModel = workspace.MyModels.TreeModel
-treeModel:PivotTo(CFrame.new( 0, 0, -10))
+treeModel:PivotTo(CFrame.new( 17, 0, -34))
 task.wait(5)
-treeModel:PivotTo(CFrame.new( -10, 0, -20))
+treeModel:PivotTo(CFrame.new( -17, 0, -34))
