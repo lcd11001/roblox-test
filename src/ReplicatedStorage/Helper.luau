@@ -5,9 +5,7 @@ local replicatedStorage = game:GetService("ReplicatedStorage") -- Define replica
 local serverStorage = game:GetService("ServerStorage") -- Define serverStorage
 local starterGui = game:GetService("StarterGui") -- Define starterGui
 
-function Helper.DetectRoot(path)
-	-- get the first part of the path
-	local root = string.match(path, "([^/]+)")
+local function DetectRoot(root)
 	if root == "Workspace" then
 		return workspace -- built-in Roblox global variable
 	elseif root == "ReplicatedStorage" then
@@ -21,9 +19,23 @@ function Helper.DetectRoot(path)
     return nil
 end
 
+local function AttachScript(part, script)
+	if part and script then
+		local newScript = script:Clone()
+		newScript.Parent = part
+		print(script.Name .. " attached to " .. part.Name .. "!")
+	elseif not part then
+		warn("invalid part!")
+	elseif not script then
+		warn("invalid script!")
+	else
+		warn(part.Name .. " or " .. script.Name .. " not found!")
+	end
+end
+
 function Helper.FindObjectByPath(path)
 	local rootPath = string.match(path, "([^/]+)")
-    local current = Helper.DetectRoot(rootPath)
+    local current = DetectRoot(rootPath)
     if current == nil then
         return nil
     end
@@ -42,7 +54,7 @@ end
 
 function Helper.WaitObjectByPath(path)
 	local rootPath = string.match(path, "([^/]+)")
-    local current = Helper.DetectRoot(rootPath)
+    local current = DetectRoot(rootPath)
     if current == nil then
         return nil
     end
@@ -52,20 +64,6 @@ function Helper.WaitObjectByPath(path)
 		current = current:WaitForChild(name)
 	end
 	return current
-end
-
-function Helper.AttachScript(part, script)
-	if part and script then
-		local newScript = script:Clone()
-		newScript.Parent = part
-		print(script.Name .. " attached to " .. part.Name .. "!")
-	elseif not part then
-		warn("invalid part!")
-	elseif not script then
-		warn("invalid script!")
-	else
-		warn(part.Name .. " or " .. script.Name .. " not found!")
-	end
 end
 
 function Helper.AttachScriptFromPath(partPath, scriptPath)
@@ -84,7 +82,7 @@ function Helper.AttachScriptFromPath(partPath, scriptPath)
 	end
 
 	-- attach the script into the part
-	Helper.AttachScript(part, script)
+	AttachScript(part, script)
 end
 
 return Helper
