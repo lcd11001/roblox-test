@@ -21,17 +21,16 @@ function Helper.DetectRoot(path)
 end
 
 function Helper.FindObjectByPath(path)
-    local root = Helper.DetectRoot(path)
-    if root == nil then
+	local rootPath = string.match(path, "([^/]+)")
+    local current = Helper.DetectRoot(rootPath)
+    if current == nil then
         return nil
     end
 
-	local current = root
-	for name in string.gmatch(path, "[^/]+") do
+	local objectPath = string.match(path, "/(.*)")
+	for name in string.gmatch(objectPath, "[^/]+") do
 		-- print('finding in path', name)
-        if name == root.Name then
-            continue
-        end
+        
 		current = current:FindFirstChild(name)
 		if not current then
 			return nil -- Return nil if any part of the path is not found
@@ -41,16 +40,14 @@ function Helper.FindObjectByPath(path)
 end
 
 function Helper.WaitObjectByPath(path)
-	local root = Helper.DetectRoot(path)
-	if root == nil then
-		return nil
-	end
+	local rootPath = string.match(path, "([^/]+)")
+    local current = Helper.DetectRoot(rootPath)
+    if current == nil then
+        return nil
+    end
 
-	local current = root
-	for name in string.gmatch(path, "[^/]+") do
-		if name == root.Name then
-			continue
-		end
+	local objectPath = string.match(path, "/(.*)")
+	for name in string.gmatch(objectPath, "[^/]+") do
 		current = current:WaitForChild(name)
 	end
 	return current
