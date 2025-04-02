@@ -26,11 +26,10 @@ function Helper.FindObjectByPath(path)
         return nil
     end
 
-	local current = game
+	local current = root
 	for name in string.gmatch(path, "[^/]+") do
 		-- print('finding in path', name)
         if name == root.Name then
-            current = root
             continue
         end
 		current = current:FindFirstChild(name)
@@ -39,6 +38,22 @@ function Helper.FindObjectByPath(path)
 		end
 	end
 	return current -- Return the final object if found
+end
+
+function Helper.WaitObjectByPath(path)
+	local root = Helper.DetectRoot(path)
+	if root == nil then
+		return nil
+	end
+
+	local current = root
+	for name in string.gmatch(path, "[^/]+") do
+		if name == root.Name then
+			continue
+		end
+		current = current:WaitForChild(name)
+	end
+	return current
 end
 
 function Helper.AttachScript(part, script)
