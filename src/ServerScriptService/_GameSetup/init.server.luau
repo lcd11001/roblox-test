@@ -47,3 +47,11 @@ local StonePath = "Workspace/MyModels/campModel/stonePart"
 local StonePart: Part = Helper.WaitObjectByPath(StonePath)
 StonePart:SetAttribute("Type", "Stone")
 collectionService:AddTag(StonePart, "PickUp")
+
+local PitBasePath = "Workspace/MyModels/campModel/firePitModel/pitBase"
+local PitBaseScriptPath = "ServerStorage/Scripts/TriggerScript/TriggerPitBase"
+Helper.AttachScriptFromPath(PitBasePath, PitBaseScriptPath)
+local PitBasePart: Part = Helper.WaitObjectByPath(PitBasePath)
+PitBasePart:SetAttribute("Stone", false)
+PitBasePart:SetAttribute("Flint", false)
+PitBasePart:SetAttribute("LogCount", 0)
