@@ -1,18 +1,19 @@
 local Helper = {}
+
+-- Roblox doesn't have a built-in global variable like 'workspace', so we need to define it
 local replicatedStorage = game:GetService("ReplicatedStorage") -- Define replicatedStorage
 local serverStorage = game:GetService("ServerStorage") -- Define serverStorage
-local workspace = game:GetService("Workspace") -- Define workspace
 local starterGui = game:GetService("StarterGui") -- Define starterGui
 
 function Helper.DetectRoot(path)
 	-- get the first part of the path
 	local root = string.match(path, "([^/]+)")
-	if root == "ReplicatedStorage" then
+	if root == "Workspace" then
+		return workspace -- built-in Roblox global variable
+	elseif root == "ReplicatedStorage" then
 		return replicatedStorage
 	elseif root == "ServerStorage" then
 		return serverStorage
-	elseif root == "Workspace" then
-		return workspace
 	elseif root == "StarterGui" then
 		return starterGui
 	end
