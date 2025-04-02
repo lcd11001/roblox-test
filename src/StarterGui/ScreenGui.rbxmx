@@ -2,7 +2,7 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="ScreenGui" referent="RBXF07C3CDD09E84786839066B40A68C3D6">
+	<Item class="ScreenGui" referent="RBXE3097F49CE7E48028CEEE60C54C12A68">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<bool name="AutoLocalize">true</bool>
@@ -25,7 +25,7 @@
 			<BinaryString name="Tags"></BinaryString>
 			<token name="ZIndexBehavior">0</token>
 		</Properties>
-		<Item class="Frame" referent="RBX394B77D4983E485C94BD5AF8B8EC0DD0">
+		<Item class="Frame" referent="RBX6D297D415B8A4642B3F08F9D04E2E596">
 			<Properties>
 				<bool name="Active">false</bool>
 				<Vector2 name="AnchorPoint">
@@ -88,7 +88,7 @@
 				<bool name="Visible">true</bool>
 				<int name="ZIndex">1</int>
 			</Properties>
-			<Item class="TextLabel" referent="RBX2FC67BDDEA334A20AB9EECA07F2499F8">
+			<Item class="TextLabel" referent="RBX25D321D0B998477CB37A50461505A679">
 				<Properties>
 					<bool name="Active">false</bool>
 					<Vector2 name="AnchorPoint">
@@ -100,7 +100,7 @@
 					<token name="AutomaticSize">0</token>
 					<Color3 name="BackgroundColor3">
 						<R>0</R>
-						<G>0.0588235296</G>
+						<G>0</G>
 						<B>1</B>
 					</Color3>
 					<float name="BackgroundTransparency">0</float>
@@ -119,7 +119,6 @@
 						<Family><url>rbxasset://fonts/families/SourceSansPro.json</url></Family>
 						<Weight>400</Weight>
 						<Style>Normal</Style>
-						<CachedFaceId><url>rbxasset://fonts/SourceSansPro-Regular.ttf</url></CachedFaceId>
 					</Font>
 					<bool name="Interactable">true</bool>
 					<int name="LayoutOrder">0</int>
@@ -159,7 +158,7 @@
 					<token name="SizeConstraint">0</token>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
-					<string name="Text">LCD</string>
+					<string name="Text">0123456789</string>
 					<Color3 name="TextColor3">
 						<R>1</R>
 						<G>1</G>
@@ -179,11 +178,37 @@
 					<bool name="TextWrapped">true</bool>
 					<token name="TextXAlignment">2</token>
 					<token name="TextYAlignment">1</token>
-					<bool name="Visible">true</bool>
+					<bool name="Visible">false</bool>
 					<int name="ZIndex">1</int>
 				</Properties>
+				<Item class="UIPadding" referent="RBX331283AE03664C2B84DF73E60DE04B41">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<string name="Name">UIPadding</string>
+						<UDim name="PaddingBottom">
+							<S>0</S>
+							<O>10</O>
+						</UDim>
+						<UDim name="PaddingLeft">
+							<S>0</S>
+							<O>50</O>
+						</UDim>
+						<UDim name="PaddingRight">
+							<S>0</S>
+							<O>50</O>
+						</UDim>
+						<UDim name="PaddingTop">
+							<S>0</S>
+							<O>10</O>
+						</UDim>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
-			<Item class="TextButton" referent="RBXB076143450F6424F944F4F25EA5FC59D">
+			<Item class="TextButton" referent="RBXDC3E3E1161964787886077784A95A47A">
 				<Properties>
 					<bool name="Active">true</bool>
 					<Vector2 name="AnchorPoint">
@@ -215,7 +240,6 @@
 						<Family><url>rbxasset://fonts/families/SourceSansPro.json</url></Family>
 						<Weight>400</Weight>
 						<Style>Normal</Style>
-						<CachedFaceId><url>rbxasset://fonts/SourceSansPro-Regular.ttf</url></CachedFaceId>
 					</Font>
 					<Ref name="HoverHapticEffect">null</Ref>
 					<bool name="Interactable">true</bool>
