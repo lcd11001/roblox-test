@@ -23,19 +23,27 @@ local TextButtonPath = "StarterGui/ScreenGui/Frame/TextButton"
 local TextButtonScriptPath = "ReplicatedStorage/LocalScripts/ClickMe"
 Helper.AttachScriptFromPath(TextButtonPath, TextButtonScriptPath)
 
+--[[
+-- LCD removed: use collection service instead
+]]
+local collectionService = game:GetService("CollectionService")
+
 -- Attach the script to the Pickup items
 local LogSpawnPath = "Workspace/MyModels/campModel/logSpawnPart"
-local PickupScriptPath = "ServerStorage/Scripts/TriggerScript/TriggerPickup"
-Helper.AttachScriptFromPath(LogSpawnPath, PickupScriptPath)
+-- local PickupScriptPath = "ServerStorage/Scripts/TriggerScript/TriggerPickup"
+-- Helper.AttachScriptFromPath(LogSpawnPath, PickupScriptPath)
 local LogSpawnPart: Part = Helper.WaitObjectByPath(LogSpawnPath)
 LogSpawnPart:SetAttribute("Type", "Log")
+collectionService:AddTag(LogSpawnPart, "PickUp")
 
 local FlintPath = "Workspace/MyModels/campModel/flintPart"
-Helper.AttachScriptFromPath(FlintPath, PickupScriptPath)
+-- Helper.AttachScriptFromPath(FlintPath, PickupScriptPath)
 local FlintPart: Part = Helper.WaitObjectByPath(FlintPath)
 FlintPart:SetAttribute("Type", "Flint")
+collectionService:AddTag(FlintPart, "PickUp")
 
 local StonePath = "Workspace/MyModels/campModel/stonePart"
-Helper.AttachScriptFromPath(StonePath, PickupScriptPath)
+-- Helper.AttachScriptFromPath(StonePath, PickupScriptPath)
 local StonePart: Part = Helper.WaitObjectByPath(StonePath)
 StonePart:SetAttribute("Type", "Stone")
+collectionService:AddTag(StonePart, "PickUp")
