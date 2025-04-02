@@ -10,4 +10,10 @@ game.Players.PlayerAdded:Connect(function(player)
     score.Name = "Score"
     score.Value = 0
     score.Parent = leaderstats
+
+    -- create Attributes
+    player:SetAttribute('HasLog', false)
+    player:SetAttribute('HasFlint', false)
+    player:SetAttribute('HasStone', false)
+    player:SetAttribute('CanCarry', true)
 end)
