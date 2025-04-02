@@ -1,9 +1,21 @@
 local base = script.Parent
 local debounce = true
 
-local stoneInPit = base.Parent:FindFirstChild("stoneInPit")
-local flintInPit = base.Parent:FindFirstChild("flintInPit")
-local allLogs = base.Parent:FindFirstChild("logModel"):GetChildren()
+local stoneInPit: Part = base.Parent:FindFirstChild("stoneInPit")
+local flintInPit: Part = base.Parent:FindFirstChild("flintInPit")
+local allLogs: { Part } = base.Parent:FindFirstChild("logModel"):GetChildren() -- Array of Parts
+
+local fire: Fire = base.Parent:FindFirstChild("firePart"):FindFirstChild("Fire")
+
+local function CheckFire()
+	local haveFlint = base:GetAttribute("Flint")
+	local haveStone = base:GetAttribute("Stone")
+	local logCount = base:GetAttribute("LogCount")
+
+	if haveFlint and haveStone and logCount == 3 then
+		fire.Enabled = true
+	end
+end
 
 base.Touched:Connect(function(hit)
 	local player = game.Players:GetPlayerFromCharacter(hit.Parent)
@@ -42,6 +54,8 @@ base.Touched:Connect(function(hit)
 				stoneInPit.Transparency = 0
 			end
 		end
+
+        CheckFire()
 
 		task.wait(2)
 		debounce = true
