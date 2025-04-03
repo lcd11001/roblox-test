@@ -5,8 +5,10 @@
     and attach it to all the parts using tags.
 ]]
 
+print("Pickup script started")
+
 local collectionService = game:GetService("CollectionService")
-local taggedParts = collectionService:GetTagged("PickUp")
+local taggedParts = collectionService:GetTagged("TAG_PICKUP")
 
 for _, part in ipairs(taggedParts) do
 	print("Attaching Pickup script to", part.Name)

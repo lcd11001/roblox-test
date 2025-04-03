@@ -25,7 +25,6 @@ Helper.AttachScriptFromPath(TextButtonPath, TextButtonScriptPath)
 
 --[[
 -- LCD removed: use collection service instead
-]]
 local collectionService = game:GetService("CollectionService")
 
 -- Attach the script to the Pickup items
@@ -47,6 +46,7 @@ local StonePath = "Workspace/MyModels/campModel/stonePart"
 local StonePart: Part = Helper.WaitObjectByPath(StonePath)
 StonePart:SetAttribute("Type", "Stone")
 collectionService:AddTag(StonePart, "PickUp")
+]]
 
 local PitBasePath = "Workspace/MyModels/campModel/firePitModel/pitBase"
 local PitBaseScriptPath = "ServerStorage/Scripts/TriggerScript/TriggerPitBase"
