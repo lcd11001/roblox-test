@@ -1,3 +1,6 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local PitBaseModule = require(ReplicatedStorage.ModuleScripts.PitBaseModule)
+
 local base = script.Parent
 local debounce = true
 
@@ -6,16 +9,6 @@ local flintInPit: Part = base.Parent:FindFirstChild("flintInPit")
 local allLogs: { Part } = base.Parent:FindFirstChild("logModel"):GetChildren() -- Array of Parts
 
 local fire: Fire = base.Parent:FindFirstChild("firePart"):FindFirstChild("Fire")
-
-local function CheckFire()
-	local haveFlint = base:GetAttribute("Flint")
-	local haveStone = base:GetAttribute("Stone")
-	local logCount = base:GetAttribute("LogCount")
-
-	if haveFlint and haveStone and logCount == 3 then
-		fire.Enabled = true
-	end
-end
 
 base.Touched:Connect(function(hit)
 	local player = game.Players:GetPlayerFromCharacter(hit.Parent)
@@ -55,7 +48,7 @@ base.Touched:Connect(function(hit)
 			end
 		end
 
-        CheckFire()
+		PitBaseModule.CheckFire(base, fire)
 
 		task.wait(2)
 		debounce = true
