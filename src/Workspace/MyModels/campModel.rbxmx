@@ -3219,7 +3219,7 @@
 						<token name="Face">2</token>
 						<float name="LightInfluence">1</float>
 						<float name="MaxDistance">1000</float>
-						<string name="Name">SurfaceGui</string>
+						<string name="Name">signGui</string>
 						<float name="PixelsPerStud">50</float>
 						<bool name="ResetOnSpawn">true</bool>
 						<Ref name="RootLocalizationTable">null</Ref>
@@ -3273,7 +3273,7 @@
 							<string name="LocalizationMatchIdentifier"></string>
 							<string name="LocalizationMatchedSourceText"></string>
 							<int name="MaxVisibleGraphemes">-1</int>
-							<string name="Name">TextLabel</string>
+							<string name="Name">signLabel</string>
 							<Ref name="NextSelectionDown">null</Ref>
 							<Ref name="NextSelectionLeft">null</Ref>
 							<Ref name="NextSelectionRight">null</Ref>
@@ -3305,7 +3305,7 @@
 							<token name="SizeConstraint">0</token>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
-							<string name="Text">We need logs, and stone, and flint</string>
+							<string name="Text">Campground</string>
 							<Color3 name="TextColor3">
 								<R>1</R>
 								<G>1</G>
