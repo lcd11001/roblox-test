@@ -1,6 +1,8 @@
 local replicatedStorage = game:GetService("ReplicatedStorage")
 local msgEvent: RemoteEvent = replicatedStorage:WaitForChild("RemoteEvents"):WaitForChild("RemoteEvent_Msg")
--- local Helper = require(replicatedStorage:WaitForChild("Helper"))
+local Helper = require(replicatedStorage:WaitForChild("Helper"))
+-- local pitBase = workspace.MyModels.campModel.firePitModel.pitBase
+local pitBase = Helper.WaitObjectByPath("Workspace/MyModels/campModel/firePitModel/pitBase")
 
 --[[
     When you have multiple parts that need to run the same code, 
@@ -18,7 +20,7 @@ for _, part in ipairs(taggedParts) do
 	print("Attaching Pickup script to", part.Name)
 	local debounce = true
 	part.Touched:Connect(function(hit)
-		local pitBase = workspace.MyModels.campModel.firePitModel.pitBase
+		-- local pitBase = workspace.MyModels.campModel.firePitModel.pitBase
 		-- local pitBase = workspace:WaitForChild("MyModels"):WaitForChild("campModel"):WaitForChild("firePitModel"):WaitForChild("pitBase")
 		-- local pitBase = Helper.WaitObjectByPath("Workspace/MyModels/campModel/firePitModel/pitBase")
 		local player = game.Players:GetPlayerFromCharacter(hit.Parent)
