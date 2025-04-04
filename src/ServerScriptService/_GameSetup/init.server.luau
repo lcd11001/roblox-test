@@ -23,6 +23,11 @@ local TextButtonPath = "StarterGui/ScreenGui/Frame/TextButton"
 local TextButtonScriptPath = "ReplicatedStorage/LocalScripts/ClickMe"
 Helper.AttachScriptFromPath(TextButtonPath, TextButtonScriptPath)
 
+-- Attach the script to the msgFrame
+local MsgFramePath = "StarterGui/MsgGui/MsgFrame"
+local MsgFrameScriptPath = "ReplicatedStorage/LocalScripts/MsgGui"
+Helper.AttachScriptFromPath(MsgFramePath, MsgFrameScriptPath)
+
 --[[
 -- LCD removed: use collection service instead
 local collectionService = game:GetService("CollectionService")

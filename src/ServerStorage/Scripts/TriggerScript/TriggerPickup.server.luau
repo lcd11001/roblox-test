@@ -1,3 +1,6 @@
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local msgEvent: RemoteEvent = replicatedStorage:WaitForChild("RemoteEvents"):WaitForChild("RemoteEvent_Msg")
+
 local pickkup: Part = script.Parent
 local debounce = true
 
@@ -14,6 +17,8 @@ pickkup.Touched:Connect(function(hit)
 			player:SetAttribute("Has" .. type, true)
 			player:SetAttribute("CanCarry", false)
 			pickkup.Transparency = 1
+
+			msgEvent:FireClient(player, "You picked up a " .. type)
 		else
 			print("player", player.Name, "cannot carry more items")
 			debounce = true

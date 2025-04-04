@@ -1,3 +1,6 @@
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local msgEvent: RemoteEvent = replicatedStorage:WaitForChild("RemoteEvents"):WaitForChild("RemoteEvent_Msg")
+
 --[[
     When you have multiple parts that need to run the same code, 
     Lua has a special service called CollectionService 
@@ -25,6 +28,8 @@ for _, part in ipairs(taggedParts) do
 				player:SetAttribute("Has" .. type, true)
 				player:SetAttribute("CanCarry", false)
 				part.Transparency = 1
+
+				msgEvent:FireClient(player, "You picked up a " .. type)
 			else
 				print("player", player.Name, "cannot carry more items")
 				debounce = true
