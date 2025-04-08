@@ -4,6 +4,7 @@ local Helper = {}
 local replicatedStorage = game:GetService("ReplicatedStorage") -- Define replicatedStorage
 local serverStorage = game:GetService("ServerStorage") -- Define serverStorage
 local starterGui = game:GetService("StarterGui") -- Define starterGui
+local starterPack = game:GetService("StarterPack")
 
 local function DetectRoot(root)
 	if root == "Workspace" then
@@ -14,6 +15,8 @@ local function DetectRoot(root)
 		return serverStorage
 	elseif root == "StarterGui" then
 		return starterGui
+	elseif root == "StarterPack" then
+		return starterPack
 	end
 
     return nil

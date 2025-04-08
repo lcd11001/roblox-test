@@ -16,4 +16,10 @@ game.Players.PlayerAdded:Connect(function(player)
     player:SetAttribute('HasFlint', false)
     player:SetAttribute('HasStone', false)
     player:SetAttribute('CanCarry', true)
+
+    player:SetAttribute('AxeEquipped', false)
+    player:SetAttribute('PickEquipped', false)
+    player:SetAttribute('UsingAxe', false)
+    player:SetAttribute('UsingPick', false)
+
 end)

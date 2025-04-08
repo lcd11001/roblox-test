@@ -62,3 +62,7 @@ Helper.AttachScriptFromPath(PitBasePath, PitBaseScriptPath)
     PitBasePart:SetAttribute("Flint", false)
     PitBasePart:SetAttribute("LogCount", 0)
 ]]
+
+local AxeToolPath = "StarterPack/axeTool"
+local AxeToolScriptPath = "ServerStorage/Scripts/ToolScript/AxeToolScript"
+Helper.AttachScriptFromPath(AxeToolPath, AxeToolScriptPath)
