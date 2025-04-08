@@ -34,21 +34,24 @@ for _, part in ipairs(taggedParts) do
 
 				-- If we have all needed logs, show message immediately
 				if type == "Log" and pitBase:GetAttribute("LogCount") >= 3 then
-					msgEvent:FireClient(player, "We have enough logs!")
+					msgEvent:FireClient(player, "We have enough logs!", true)
+					task.wait(2)
 					debounce = true
 					return
 				end
 
 				-- If we have all needed flint, show message immediately
 				if type == "Flint" and pitBase:GetAttribute("Flint") == true then
-					msgEvent:FireClient(player, "We already have flint!")
+					msgEvent:FireClient(player, "We already have flint!", true)
+					task.wait(2)
 					debounce = true
 					return
 				end
 
 				-- If we have all needed stone, show message immediately
 				if type == "Stone" and pitBase:GetAttribute("Stone") == true then
-					msgEvent:FireClient(player, "We already have stone!")
+					msgEvent:FireClient(player, "We already have stone!", true)
+					task.wait(2)
 					debounce = true
 					return
 				end
@@ -57,7 +60,7 @@ for _, part in ipairs(taggedParts) do
 				player:SetAttribute("CanCarry", false)
 				part.Transparency = 1
 
-				msgEvent:FireClient(player, "You picked up a " .. type)
+				msgEvent:FireClient(player, "You picked up a " .. type, false)
 			else
 				print("player", player.Name, "cannot carry more items")
 				debounce = true
