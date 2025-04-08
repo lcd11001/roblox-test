@@ -2,7 +2,7 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Part" referent="RBXDFEBBBB9EDBD4235B750148B9BFB079C">
+	<Item class="Part" referent="RBXD1FE21FD07C54516B3A6B25C741A141B">
 		<Properties>
 			<bool name="Anchored">true</bool>
 			<BinaryString name="AttributesSerialize">AQAAAAQAAABUeXBlAgMAAABMb2c=</BinaryString>
