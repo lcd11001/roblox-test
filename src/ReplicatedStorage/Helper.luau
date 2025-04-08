@@ -73,14 +73,14 @@ function Helper.AttachScriptFromPath(partPath, scriptPath)
 	-- find the part
 	local part = Helper.FindObjectByPath(partPath)
 	if part == nil then
-		print(partPath .. " not found")
+		warn(partPath .. " not found")
 		return
 	end
 
 	-- find the script
 	local script = Helper.FindObjectByPath(scriptPath)
 	if script == nil then
-		print(scriptPath .. " not found")
+		warn(scriptPath .. " not found")
 		return
 	end
 
