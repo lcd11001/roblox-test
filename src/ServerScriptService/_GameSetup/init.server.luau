@@ -66,3 +66,7 @@ Helper.AttachScriptFromPath(PitBasePath, PitBaseScriptPath)
 local AxeToolPath = "StarterPack/axeTool"
 local AxeToolScriptPath = "ServerStorage/Scripts/ToolScript/AxeToolScript"
 Helper.AttachScriptFromPath(AxeToolPath, AxeToolScriptPath)
+
+local PickToolPath = "StarterPack/pickTool"
+local PickToolScriptPath = "ServerStorage/Scripts/ToolScript/PickToolScript"
+Helper.AttachScriptFromPath(PickToolPath, PickToolScriptPath)
