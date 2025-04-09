@@ -15,7 +15,6 @@ local function showMessage(message: string, id: number)
 	msgLabel.Text = message
 
 	task.wait(3) -- Display the message for 3 seconds
-	print("msg id:", id, " vs displayId:", displayId)
 	if displayId == id then
 		-- only hide the message if the ID matches
 		msgFrame.Visible = false
@@ -43,8 +42,6 @@ local function enqueueMessage(message: string, isQueued: boolean?)
 	end
 
 	isQueued = isQueued or false -- If isQueued is nil, default to false
-
-	print("Enqueue Message from server:", message)
 	if isQueued then
 		table.insert(msgQueue, message) -- Add the message to the queue
 		if not isDisplaying then

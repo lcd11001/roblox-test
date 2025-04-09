@@ -1,5 +1,3 @@
-print("Initializing Game...")
-
 -- Get references
 local replicatedStorage = game:GetService("ReplicatedStorage")
 

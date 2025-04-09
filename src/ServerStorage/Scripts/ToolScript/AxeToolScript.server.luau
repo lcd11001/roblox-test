@@ -20,21 +20,14 @@ local function GetSpawnIndex(): number
 		index = math.random(1, #spawnPoints)
 	until not spawnIndexInUsed[index]
 	spawnIndexInUsed[index] = true
-    print("Spawn index in use: " .. index)
+
 	return index
 end
 
 local function ResetSpawnIndex(index: number)
     if spawnIndexInUsed[index] then
-        print("Resetting spawn index: " .. index)
         spawnIndexInUsed[index] = nil
         -- table.remove(spawnIndexInUsed, index)
-
-        print("Available spawn points: ", #spawnIndexInUsed)
-        -- Check if all spawn points are available
-        for key, value in spawnIndexInUsed do
-            print("Spawn index " .. key .. " is in use: " .. tostring(value))
-        end
     end    
 end
 
@@ -47,7 +40,6 @@ local function GetLength(t)
 end
 
 local function EquipTool()
-	-- print(tool.Name .. " Tool equipped")
 	-- tool is the child of character
 	local character = tool.Parent
 	local player = game.Players:GetPlayerFromCharacter(character)
@@ -55,7 +47,6 @@ local function EquipTool()
 end
 
 local function UnequipTool()
-	-- print(tool.Name .. " Tool unequipped")
 	-- tool is the child of Players/player/Backpack
 	local backpack = tool.Parent
 	local player = backpack.Parent
@@ -63,7 +54,6 @@ local function UnequipTool()
 end
 
 local function ActivateTool()
-	-- print(tool.Name .. " Tool activated")
 	if GetLength(spawnIndexInUsed) == #spawnPoints then
 		warn("All spawn points are in use")
 		return
@@ -80,7 +70,7 @@ local function ActivateTool()
 		chopCount += 1
 		if chopCount == numberOfChops then
 			chopCount = 0
-			print("You get a log")
+
 			local randIndex = GetSpawnIndex()
 			local log: Part = logPartPrefab:Clone()
 			log.Position = spawnPoints[randIndex].Position
@@ -98,7 +88,6 @@ local function ActivateTool()
 end
 
 local function DeactivateTool()
-	-- print(tool.Name .. " Tool deactivated")
 	-- tool is the child of character
 	local character = tool.Parent
 	local player = game.Players:GetPlayerFromCharacter(character)

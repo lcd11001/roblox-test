@@ -1,5 +1,3 @@
-print('TriggerPart script running')
-
 local triggerPart = script.Parent
 local debounce = true
 local points = 10
@@ -11,8 +9,6 @@ triggerPart.Touched:Connect(function(otherPart)
     -- reduce the number of times this function is called
     if humanoid and debounce then
         debounce = false
-        -- print("Trigger touched by", otherPart:GetFullName())
-        print("Update player score", character)
 
         -- Add points to the player
         local player = game.Players:GetPlayerFromCharacter(character)

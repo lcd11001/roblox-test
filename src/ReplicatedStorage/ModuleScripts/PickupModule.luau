@@ -16,14 +16,10 @@ function PickupModule.TagPickup()
     that we can use to have just one script 
     and attach it to all the parts using tags.
     ]]
-
-	print("PickupModule.TagPickup started")
-
 	
 	local taggedParts = collectionService:GetTagged("TAG_PICKUP")
 
 	for _, part: Part in ipairs(taggedParts) do
-		print("Attaching Pickup script to", part.Name)
 		local debounce = true
 		part.Touched:Connect(function(hit)
 			-- local pitBase = workspace.MyModels.campModel.firePitModel.pitBase
@@ -36,7 +32,6 @@ function PickupModule.TagPickup()
 				local canCarry = player:GetAttribute("CanCarry")
 				if canCarry then
 					local type = part:GetAttribute("Type")
-					print("player", player.Name, "picked up", type)
 
 					-- If we have all needed logs, show message immediately
 					if type == "Log" and pitBase:GetAttribute("LogCount") >= 3 then
@@ -67,7 +62,6 @@ function PickupModule.TagPickup()
 
 					msgEvent:FireClient(player, "You picked up a " .. type, false)
 				else
-					print("player", player.Name, "cannot carry more items")
 					debounce = true
 					return
 				end

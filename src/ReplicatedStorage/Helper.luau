@@ -19,7 +19,7 @@ local function DetectRoot(root)
 		return starterPack
 	end
 
-    return nil
+	return nil
 end
 
 local function AttachScript(part, script)
@@ -38,15 +38,13 @@ end
 
 function Helper.FindObjectByPath(path)
 	local rootPath = string.match(path, "([^/]+)")
-    local current = DetectRoot(rootPath)
-    if current == nil then
-        return nil
-    end
+	local current = DetectRoot(rootPath)
+	if current == nil then
+		return nil
+	end
 
 	local objectPath = string.match(path, "/(.*)")
 	for name in string.gmatch(objectPath, "[^/]+") do
-		-- print('finding in path', name)
-        
 		current = current:FindFirstChild(name)
 		if not current then
 			return nil -- Return nil if any part of the path is not found
@@ -57,10 +55,10 @@ end
 
 function Helper.WaitObjectByPath(path)
 	local rootPath = string.match(path, "([^/]+)")
-    local current = DetectRoot(rootPath)
-    if current == nil then
-        return nil
-    end
+	local current = DetectRoot(rootPath)
+	if current == nil then
+		return nil
+	end
 
 	local objectPath = string.match(path, "/(.*)")
 	for name in string.gmatch(objectPath, "[^/]+") do

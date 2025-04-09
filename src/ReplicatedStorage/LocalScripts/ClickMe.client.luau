@@ -1,5 +1,3 @@
-print("click me script running")
-
 local player: Player = game.Players.LocalPlayer
 local button: TextButton = script.Parent
 local label: TextLabel = button.Parent:WaitForChild("TextLabel")
@@ -11,7 +9,6 @@ local Helper = require(replicatedStorage:WaitForChild("Helper"))
 local remoteEvent: RemoteEvent = Helper.WaitObjectByPath("ReplicatedStorage/RemoteEvents/RemoteEvent_Hello")
 
 button.MouseButton1Click:Connect(function()
-	-- print(button.Name .. ' clicked')
 	-- label.Visible = true
 	-- label.Text = 'Hello ' .. player.Name
 

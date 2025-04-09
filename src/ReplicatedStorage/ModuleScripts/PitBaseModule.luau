@@ -41,7 +41,6 @@ function PitBase.ShowMessage(base: Part)
 		message = startMsg .. message
 	end
 
-	-- print(message)
 	if signTextLabel then
 		signTextLabel.Text = message
 	else

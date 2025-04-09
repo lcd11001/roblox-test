@@ -4,7 +4,6 @@ local Helper = require(replicatedStorage:WaitForChild("Helper"))
 local remoteEvent: RemoteEvent = Helper.WaitObjectByPath("ReplicatedStorage/RemoteEvents/RemoteEvent_Hello")
 
 local function FromTheClient(player)
-	print("Hello " .. player.Name .. " from the server!")
     local leaderstats = player:WaitForChild("leaderstats")
     local score = leaderstats:WaitForChild("Score")
     score.Value += 1
