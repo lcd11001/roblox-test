@@ -25,18 +25,18 @@ local function GetSpawnIndex(): number
 end
 
 local function ResetSpawnIndex(index: number)
-    if spawnIndexInUsed[index] then
-        spawnIndexInUsed[index] = nil
-        -- table.remove(spawnIndexInUsed, index)
-    end    
+	if spawnIndexInUsed[index] then
+		spawnIndexInUsed[index] = nil
+		-- table.remove(spawnIndexInUsed, index)
+	end
 end
 
 local function GetLength(t)
-    local count = 0
-    for _, _ in t do
-        count += 1
-    end
-    return count
+	local count = 0
+	for _, _ in t do
+		count += 1
+	end
+	return count
 end
 
 local function EquipTool()
@@ -54,19 +54,26 @@ local function UnequipTool()
 end
 
 local function ActivateTool()
-	if GetLength(spawnIndexInUsed) == #spawnPoints then
-		warn("All spawn points are in use")
-		return
-	end
-
 	-- tool is the child of character
 	local character = tool.Parent
+
+	local humanoid: Humanoid = character:FindFirstChild("Humanoid")
+	local animator: Animator = humanoid:FindFirstChild("Animator")
+	local axeAnimation: AnimationTrack = animator:LoadAnimation(script.Parent.AxeAnimation)
+
 	local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
 	local player = game.Players:GetPlayerFromCharacter(character)
 	player:SetAttribute("UsingAxe", true)
 
 	local distance = (humanoidRootPart.Position - trunk.Position).Magnitude
 	if distance < 5 then
+		axeAnimation:Play()
+
+		if GetLength(spawnIndexInUsed) == #spawnPoints then
+			warn("All spawn points are in use")
+			return
+		end
+
 		chopCount += 1
 		if chopCount == numberOfChops then
 			chopCount = 0
