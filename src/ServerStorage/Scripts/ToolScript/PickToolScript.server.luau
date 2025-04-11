@@ -30,12 +30,19 @@ end
 local function ActivateTool()
 	-- tool is the child of character
 	local character = tool.Parent
+	
+	local humanoid: Humanoid= character:FindFirstChild("Humanoid")
+	local animator:Animator = humanoid:FindFirstChild("Animator")
+	local pickAnimation: Animation = animator:LoadAnimation(tool.PickAnimation)
+
 	local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
 	local player = game.Players:GetPlayerFromCharacter(character)
 	player:SetAttribute("UsingPick", true)
 
 	local distance = (humanoidRootPart.Position - rockPrimaryPart.Position).Magnitude
 	if distance < 5 then
+		pickAnimation:Play()
+
 		pickCount += 1
 		if pickCount == stonePicks then
 			local stone: Part = stonePrefab:Clone()

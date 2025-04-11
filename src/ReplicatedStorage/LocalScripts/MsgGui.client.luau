@@ -18,6 +18,7 @@ local function showMessage(message: string, id: number)
 	if displayId == id then
 		-- only hide the message if the ID matches
 		msgFrame.Visible = false
+		msgDisplay = "" -- Clear the current message being displayed
 	end
 end
 
