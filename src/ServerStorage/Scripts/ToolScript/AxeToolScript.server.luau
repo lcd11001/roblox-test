@@ -82,7 +82,7 @@ local function ActivateTool()
 			local log: Part = logPartPrefab:Clone()
 			log.Position = spawnPoints[randIndex].Position
 			log.Rotation = spawnPoints[randIndex].Rotation
-			log.Parent = workspace
+			log.Parent = workspace.PickupItems
 			log:SetAttribute("SpawnIndex", randIndex)
 			PickupModule.TagPickup()
 

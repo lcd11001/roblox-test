@@ -38,6 +38,12 @@
         },
         "$path": "src/Workspace/MyModels"
       },
+      "PickupItems": {
+        "$className": "Folder",
+        "$properties": {
+          "Archivable": true
+        }
+      },
       "Baseplate": {
         "$className": "Part",
         "$properties": {

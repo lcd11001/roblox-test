@@ -46,11 +46,11 @@ local function ActivateTool()
 		pickCount += 1
 		if pickCount == stonePicks then
 			local stone: Part = stonePrefab:Clone()
-			stone.Parent = workspace
+			stone.Parent = workspace.PickupItems
 			PickupModule.TagPickup()
 		elseif pickCount == flintPicks then
 			local flint: Part = flintPrefab:Clone()
-			flint.Parent = workspace
+			flint.Parent = workspace.PickupItems
 			PickupModule.TagPickup()
 		elseif pickCount > math.max(stonePicks, flintPicks) then
 			pickCount = 0
