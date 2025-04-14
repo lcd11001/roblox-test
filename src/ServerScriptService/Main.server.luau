@@ -22,4 +22,21 @@ game.Players.PlayerAdded:Connect(function(player)
     player:SetAttribute('UsingAxe', false)
     player:SetAttribute('UsingPick', false)
 
+    -- create player variables
+    local playerVariables = Instance.new("Folder")
+    playerVariables.Name = "PlayerVariables"
+    playerVariables.Parent = player
+
+    -- player level
+    local playerLevel = Instance.new("IntValue")
+    playerLevel.Name = "Level"
+    playerLevel.Value = 1
+    playerLevel.Parent = playerVariables
+
+    -- player swings
+    local playerSwings = Instance.new("IntValue")
+    playerSwings.Name = "Swings"
+    playerSwings.Value = 0
+    playerSwings.Parent = playerVariables
+
 end)

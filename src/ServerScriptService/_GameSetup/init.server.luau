@@ -76,3 +76,12 @@ Helper.AttachScriptFromPath(ReplayButtonPath, ReplayButtonScriptPath)
 local GameGuiPath = "StarterGui/GameGui"
 local GameGuiScriptPath = "ReplicatedStorage/LocalScripts/GameGui"
 Helper.AttachScriptFromPath(GameGuiPath, GameGuiScriptPath)
+
+-- Attach the script to the stats GUI
+local LevelLabelPath = "StarterGui/StatsGui/StatsFrame/LevelLabel"
+local LevelLabelGuiScriptPath = "ReplicatedStorage/LocalScripts/LevelLabel"
+Helper.AttachScriptFromPath(LevelLabelPath, LevelLabelGuiScriptPath)
+
+local SwingLabelPath = "StarterGui/StatsGui/StatsFrame/SwingLabel"
+local SwingLabelGuiScriptPath = "ReplicatedStorage/LocalScripts/SwingLabel"
+Helper.AttachScriptFromPath(SwingLabelPath, SwingLabelGuiScriptPath)
