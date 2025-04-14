@@ -43,7 +43,7 @@ base.Touched:Connect(function(hit)
 			end
 		end
 
-		PitBaseModule.CheckFire(base, fire)
+		PitBaseModule.CheckFire(base, fire, player)
 
 		task.wait(2)
 		debounce = true

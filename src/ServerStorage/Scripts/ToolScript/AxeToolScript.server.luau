@@ -67,6 +67,9 @@ local function ActivateTool()
 
 	local distance = (humanoidRootPart.Position - trunk.Position).Magnitude
 	if distance < 5 then
+		local swingVariable = player.PlayerVariables.Swings
+		swingVariable.Value += 1
+
 		axeAnimation:Play()
 
 		if GetLength(spawnIndexInUsed) == #spawnPoints then

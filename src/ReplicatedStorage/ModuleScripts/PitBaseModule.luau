@@ -11,13 +11,17 @@ local signTextLabel = workspace
 	:WaitForChild("signGui")
 	:WaitForChild("signLabel")
 
-function PitBase.CheckFire(base: Part, fire: Fire)
+function PitBase.CheckFire(base: Part, fire: Fire, player: Player)
 	local haveFlint = base:GetAttribute("Flint")
 	local haveStone = base:GetAttribute("Stone")
 	local logCount = base:GetAttribute("LogCount")
 
 	if haveFlint and haveStone and logCount == 3 then
 		fire.Enabled = true
+
+		local levelVariable = player.PlayerVariables.Level
+		levelVariable.Value += 1
+
 		task.wait(3)
 		replayEvent:FireAllClients("Show")
 	end

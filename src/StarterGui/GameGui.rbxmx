@@ -2,7 +2,7 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="ScreenGui" referent="RBX8D2990B1C38948C5988AFBCDE1562916">
+	<Item class="ScreenGui" referent="RBXBFF758B3CC1C46D2BF342AC3B593D54A">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<bool name="AutoLocalize">true</bool>
@@ -15,7 +15,7 @@
 			<bool name="ResetOnSpawn">true</bool>
 			<Ref name="RootLocalizationTable">null</Ref>
 			<token name="SafeAreaCompatibility">1</token>
-			<token name="ScreenInsets">2</token>
+			<token name="ScreenInsets">1</token>
 			<token name="SelectionBehaviorDown">0</token>
 			<token name="SelectionBehaviorLeft">0</token>
 			<token name="SelectionBehaviorRight">0</token>
@@ -25,7 +25,7 @@
 			<BinaryString name="Tags"></BinaryString>
 			<token name="ZIndexBehavior">1</token>
 		</Properties>
-		<Item class="Frame" referent="RBXE399B38E7F0D4C23AA784386ACEE2225">
+		<Item class="Frame" referent="RBX7EE9CB68441642238AD9770FA72199E8">
 			<Properties>
 				<bool name="Active">false</bool>
 				<Vector2 name="AnchorPoint">
@@ -88,7 +88,7 @@
 				<bool name="Visible">true</bool>
 				<int name="ZIndex">1</int>
 			</Properties>
-			<Item class="TextButton" referent="RBX2A82745705714C288AE776CA1A8B21EF">
+			<Item class="TextButton" referent="RBX21B91E0B92F34716B1011E5395E48056">
 				<Properties>
 					<bool name="Active">true</bool>
 					<Vector2 name="AnchorPoint">
@@ -120,7 +120,6 @@
 						<Family><url>rbxasset://fonts/families/SourceSansPro.json</url></Family>
 						<Weight>400</Weight>
 						<Style>Normal</Style>
-						<CachedFaceId><url>rbxasset://fonts/SourceSansPro-Regular.ttf</url></CachedFaceId>
 					</Font>
 					<Ref name="HoverHapticEffect">null</Ref>
 					<bool name="Interactable">true</bool>
