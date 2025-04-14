@@ -10,7 +10,6 @@ local LavaPartPath = "Workspace/MyParts/LavaPart"
 local LavaPartScriptPath = "ServerStorage/Scripts/LavaScript/LavaPartScript2"
 Helper.AttachScriptFromPath(LavaPartPath, LavaPartScriptPath)
 
-
 -- Attach the script to the trigger
 local TriggerPartPath = "Workspace/MyParts/TriggerPart"
 local TriggerPartScriptPath = "ServerStorage/Scripts/TriggerScript/TriggerPartScript"
@@ -68,3 +67,12 @@ Helper.AttachScriptFromPath(AxeToolPath, AxeToolScriptPath)
 local PickToolPath = "StarterPack/pickTool"
 local PickToolScriptPath = "ServerStorage/Scripts/ToolScript/PickToolScript"
 Helper.AttachScriptFromPath(PickToolPath, PickToolScriptPath)
+
+-- Attach the script to the game GUI
+local ReplayButtonPath = "StarterGui/GameGui/GameFrame/ReplayButton"
+local ReplayButtonScriptPath = "ReplicatedStorage/LocalScripts/ReplayButton"
+Helper.AttachScriptFromPath(ReplayButtonPath, ReplayButtonScriptPath)
+
+local GameGuiPath = "StarterGui/GameGui"
+local GameGuiScriptPath = "ReplicatedStorage/LocalScripts/GameGui"
+Helper.AttachScriptFromPath(GameGuiPath, GameGuiScriptPath)

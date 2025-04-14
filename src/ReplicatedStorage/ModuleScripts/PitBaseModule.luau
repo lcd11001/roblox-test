@@ -1,6 +1,15 @@
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local replayEvent: RemoteEvent = replicatedStorage:WaitForChild("RemoteEvents"):WaitForChild("RemoteEvent_Replay")
+
 local PitBase = {}
 
-local signTextLabel = workspace:WaitForChild("MyModels"):WaitForChild("campModel"):WaitForChild("signModel"):WaitForChild("back"):WaitForChild("signGui"):WaitForChild("signLabel")
+local signTextLabel = workspace
+	:WaitForChild("MyModels")
+	:WaitForChild("campModel")
+	:WaitForChild("signModel")
+	:WaitForChild("back")
+	:WaitForChild("signGui")
+	:WaitForChild("signLabel")
 
 function PitBase.CheckFire(base: Part, fire: Fire)
 	local haveFlint = base:GetAttribute("Flint")
@@ -9,6 +18,8 @@ function PitBase.CheckFire(base: Part, fire: Fire)
 
 	if haveFlint and haveStone and logCount == 3 then
 		fire.Enabled = true
+		task.wait(3)
+		replayEvent:FireAllClients("Show")
 	end
 
 	PitBase.ShowMessage(base)
@@ -18,7 +29,7 @@ function PitBase.ShowMessage(base: Part)
 	local haveFlint = base:GetAttribute("Flint")
 	local haveStone = base:GetAttribute("Stone")
 	local logCount = base:GetAttribute("LogCount")
-	
+
 	local message = ""
 	local startMsg = "We need "
 	local flintMsg = "Flint"
